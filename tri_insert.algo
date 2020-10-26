@@ -1,0 +1,19 @@
+ALGORITHM sort_by_insert
+VAR
+arr : ARRAY_OF INTEGER[];
+i,j,ins : INTEGER ;
+
+BEGIN
+    read(arr);
+    FOR i FROM 1 TO arr.length STEP 1  DO
+    ins := arr[i];
+    j := i-1 ;
+
+      WHILE (j >=0 && arr[j] > ins ) DO
+         arr[j+1] =arr[j] ;
+         j=j-1
+      END_WHILE
+    arr[j+1] = ins;
+    END_FOR
+    write(arr);
+END
